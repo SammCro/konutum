@@ -2,10 +2,10 @@ import React from "react";
 
 export const FilterLocation = () => {
   return (
-    <section class="py-4 py-md-5 my-5">
-      <div class="container py-md-5">
-        <div class="table-responsive">
-          <table class="table">
+    <section className="py-4 py-md-5 my-5">
+      <div className="container py-md-5">
+        <div className="table-responsive">
+          <table className="table">
             <thead>
               <tr>
                 <th>Konum Adı</th>

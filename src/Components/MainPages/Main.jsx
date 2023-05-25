@@ -4,44 +4,44 @@ import { Faq } from "../Layout/Faq";
 export const Main = () => {
   return (
     <>
-      <header class="pt-5">
-        <div class="container pt-4 pt-xl-5">
-          <div class="row pt-5">
-            <div class="col-md-8 text-center text-md-start mx-auto">
-              <div class="text-center">
-                <h1 class="display-4 fw-bold mb-5">
+      <header className="pt-5">
+        <div className="container pt-4 pt-xl-5">
+          <div className="row pt-5">
+            <div className="col-md-8 text-center text-md-start mx-auto">
+              <div className="text-center">
+                <h1 className="display-4 fw-bold mb-5">
                   Evinizin konumunu emin ellerde kendiniz&nbsp;
-                  <span class="underline">seçin</span>.
+                  <span className="underline">seçin</span>.
                 </h1>
-                <p class="fs-5 text-muted mb-5">
+                <p className="fs-5 text-muted mb-5">
                   Güvenilir uzmanlar tarafından seçilen en iyi konumda ki
                   konutlara ulaşın !&nbsp;
                 </p>
                 <form
-                  class="d-flex justify-content-center flex-wrap"
+                  className="d-flex justify-content-center flex-wrap"
                   method="post"
                 >
-                  <div class="shadow-lg mb-3">
+                  <div className="shadow-lg mb-3">
                     <input
-                      class="form-control"
+                      className="form-control"
                       type="email"
                       name="email"
                       placeholder="Email Adresi"
                     />
                   </div>
-                  <div class="shadow-lg mb-3">
-                    <button class="btn btn-primary" type="submit">
+                  <div className="shadow-lg mb-3">
+                    <button className="btn btn-primary" type="submit">
                       Abone Ol !
                     </button>
                   </div>
                 </form>
               </div>
             </div>
-            <div class="col-12 col-lg-10 mx-auto">
-              <div class="text-center position-relative">
+            <div className="col-12 col-lg-10 mx-auto">
+              <div className="text-center position-relative">
                 <img
                   alt="..."
-                  class="img-fluid"
+                  className="img-fluid"
                   src="../assets/img/illustrations/desk.svg?h=564975c984a31da9215247a176652d21"
                   style={{width: '800px'}}
                 />
@@ -51,12 +51,12 @@ export const Main = () => {
         </div>
       </header>
       <section>
-        <div class="container py-4 py-xl-5">
-          <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
-            <div class="col">
-              <div class="card border-light border-1 d-flex justify-content-center p-4">
-                <div class="card-body">
-                  <div class="bs-icon-lg bs-icon-rounded bs-icon-secondary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-4 bs-icon">
+        <div className="container py-4 py-xl-5">
+          <div className="row gy-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div className="col">
+              <div className="card border-light border-1 d-flex justify-content-center p-4">
+                <div className="card-body">
+                  <div className="bs-icon-lg bs-icon-rounded bs-icon-secondary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-4 bs-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 -32 576 576"
@@ -68,8 +68,8 @@ export const Main = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 class="fw-bold">Kolay</h4>
-                    <p class="text-muted">
+                    <h4 className="fw-bold">Kolay</h4>
+                    <p className="text-muted">
                       Herkesin anlayabileceği ve kullanabileceği bir platformda
                       konutunuzu oturduğunuz yerden seçin!&nbsp;
                     </p>
@@ -77,10 +77,10 @@ export const Main = () => {
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card border-light border-1 d-flex justify-content-center p-4">
-                <div class="card-body">
-                  <div class="bs-icon-lg bs-icon-rounded bs-icon-secondary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-4 bs-icon">
+            <div className="col">
+              <div className="card border-light border-1 d-flex justify-content-center p-4">
+                <div className="card-body">
+                  <div className="bs-icon-lg bs-icon-rounded bs-icon-secondary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-4 bs-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 -32 576 576"
@@ -92,8 +92,8 @@ export const Main = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 class="fw-bold">Güvenilir</h4>
-                    <p class="text-muted">
+                    <h4 className="fw-bold">Güvenilir</h4>
+                    <p className="text-muted">
                       Seçili uzmanlar tarafından değerlendirilen bölgeleri görün
                       ve en güvenli yerleri oturduğunuz yerden belirleyin!
                     </p>
@@ -101,10 +101,10 @@ export const Main = () => {
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card border-light border-1 d-flex justify-content-center p-4">
-                <div class="card-body">
-                  <div class="bs-icon-lg bs-icon-rounded bs-icon-secondary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-4 bs-icon">
+            <div className="col">
+              <div className="card border-light border-1 d-flex justify-content-center p-4">
+                <div className="card-body">
+                  <div className="bs-icon-lg bs-icon-rounded bs-icon-secondary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-4 bs-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 -32 576 576"
@@ -116,8 +116,8 @@ export const Main = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 class="fw-bold">Esnek</h4>
-                    <p class="text-muted">
+                    <h4 className="fw-bold">Esnek</h4>
+                    <p className="text-muted">
                       Birden fazla lokasyonu belirleyin ve en güvenli bölgeyi
                       bulun!
                     </p>
@@ -129,20 +129,20 @@ export const Main = () => {
         </div>
       </section>
       <section>
-        <div class="container py-4 py-xl-5">
-          <div class="row">
-            <div class="col-md-6 col-xxl-7">
-              <h3 class="display-6 fw-bold pb-md-4">
+        <div className="container py-4 py-xl-5">
+          <div className="row">
+            <div className="col-md-6 col-xxl-7">
+              <h3 className="display-6 fw-bold pb-md-4">
                 Sadece 4 adımda Konut-Risk Sistemini kullanmaya başlayın.
               </h3>
             </div>
           </div>
-          <div class="row gy-4 gy-md-0">
-            <div class="col-md-6 d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+          <div className="row gy-4 gy-md-0">
+            <div className="col-md-6 d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
               <div>
-                <div class="row gy-2 row-cols-1 row-cols-sm-2">
-                  <div class="col text-center text-md-start">
-                    <div class="d-flex justify-content-center align-items-center justify-content-md-start">
+                <div className="row gy-2 row-cols-1 row-cols-sm-2">
+                  <div className="col text-center text-md-start">
+                    <div className="d-flex justify-content-center align-items-center justify-content-md-start">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1em"
@@ -153,7 +153,7 @@ export const Main = () => {
                         fill="none"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="icon icon-tabler icon-tabler-sun fs-3 text-primary bg-warning"
+                        className="icon icon-tabler icon-tabler-sun fs-3 text-primary bg-warning"
                       >
                         <path
                           stroke="none"
@@ -163,14 +163,14 @@ export const Main = () => {
                         <circle cx="12" cy="12" r="4"></circle>
                         <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
                       </svg>
-                      <h5 class="fw-bold mb-0 ms-2">Kayıt</h5>
+                      <h5 className="fw-bold mb-0 ms-2">Kayıt</h5>
                     </div>
-                    <p class="text-muted my-3">
+                    <p className="text-muted my-3">
                       Sisteme kaydınızı gerçekleştirin.
                     </p>
                   </div>
-                  <div class="col text-center text-md-start">
-                    <div class="d-flex justify-content-center align-items-center justify-content-md-start">
+                  <div className="col text-center text-md-start">
+                    <div className="d-flex justify-content-center align-items-center justify-content-md-start">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1em"
@@ -181,7 +181,7 @@ export const Main = () => {
                         fill="none"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="icon icon-tabler icon-tabler-sun fs-3 text-primary bg-warning"
+                        className="icon icon-tabler icon-tabler-sun fs-3 text-primary bg-warning"
                       >
                         <path
                           stroke="none"
@@ -191,15 +191,15 @@ export const Main = () => {
                         <circle cx="12" cy="12" r="4"></circle>
                         <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
                       </svg>
-                      <h5 class="fw-bold mb-0 ms-2">Konum Belirleme</h5>
+                      <h5 className="fw-bold mb-0 ms-2">Konum Belirleme</h5>
                     </div>
-                    <p class="text-muted my-3">
+                    <p className="text-muted my-3">
                       Harita üzerinde gezinerek en güvenilir konumları
                       belirleyin!
                     </p>
                   </div>
-                  <div class="col text-center text-md-start">
-                    <div class="d-flex justify-content-center align-items-center justify-content-md-start">
+                  <div className="col text-center text-md-start">
+                    <div className="d-flex justify-content-center align-items-center justify-content-md-start">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1em"
@@ -210,7 +210,7 @@ export const Main = () => {
                         fill="none"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="icon icon-tabler icon-tabler-sun fs-3 text-primary bg-warning"
+                        className="icon icon-tabler icon-tabler-sun fs-3 text-primary bg-warning"
                       >
                         <path
                           stroke="none"
@@ -220,15 +220,15 @@ export const Main = () => {
                         <circle cx="12" cy="12" r="4"></circle>
                         <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
                       </svg>
-                      <h5 class="fw-bold mb-0 ms-2">Filtrele</h5>
+                      <h5 className="fw-bold mb-0 ms-2">Filtrele</h5>
                     </div>
-                    <p class="text-muted my-3">
+                    <p className="text-muted my-3">
                       Belirlediğiniz güvenli konumları filtreleyin ve listenize
                       ekleyin.
                     </p>
                   </div>
-                  <div class="col text-center text-md-start">
-                    <div class="d-flex justify-content-center align-items-center justify-content-md-start">
+                  <div className="col text-center text-md-start">
+                    <div className="d-flex justify-content-center align-items-center justify-content-md-start">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1em"
@@ -239,7 +239,7 @@ export const Main = () => {
                         fill="none"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="icon icon-tabler icon-tabler-sun fs-3 text-primary bg-warning"
+                        className="icon icon-tabler icon-tabler-sun fs-3 text-primary bg-warning"
                       >
                         <path
                           stroke="none"
@@ -249,9 +249,9 @@ export const Main = () => {
                         <circle cx="12" cy="12" r="4"></circle>
                         <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
                       </svg>
-                      <h5 class="fw-bold mb-0 ms-2">O Yere Ulaş</h5>
+                      <h5 className="fw-bold mb-0 ms-2">O Yere Ulaş</h5>
                     </div>
-                    <p class="text-muted my-3">
+                    <p className="text-muted my-3">
                       Belirlediğiniz güvenli bölgelerin artık raporlarına
                       ulaşabilirsiniz!&nbsp;
                     </p>
@@ -259,11 +259,11 @@ export const Main = () => {
                 </div>
               </div>
             </div>
-            <div class="col-md-6 order-first order-md-last">
+            <div className="col-md-6 order-first order-md-last">
               <div>
                 <img
                   alt="..."
-                  class="rounded img-fluid w-100 fit-cover"
+                  className="rounded img-fluid w-100 fit-cover"
                   style={{minHeight: '300px'}}
                   src="../assets/img/illustrations/teamwork.svg?h=c9d16670db4191bc86105dabde77d312"
                 />

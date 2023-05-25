@@ -4,9 +4,9 @@ import { Marker, Popup } from "react-leaflet";
   
 export const UserMap = () => {
   return (
-    <section class="py-5 mt-5">
-      <div class="container">
-        <div class="row">          <div class="col-md-12">
+    <section className="py-5 mt-5">
+      <div className="container">
+        <div className="row">          <div className="col-md-12">
             <MapContainer
               center={[51.505, -0.09]}
               zoom={13}

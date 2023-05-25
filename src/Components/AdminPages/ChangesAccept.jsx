@@ -2,10 +2,10 @@ import React from "react";
 
 export const ChangesAccept = () => {
   return (
-    <section class="py-4 py-md-5 my-5">
-      <div class="container py-md-5">
-        <div class="table-responsive">
-          <table class="table">
+    <section className="py-4 py-md-5 my-5">
+      <div className="container py-md-5">
+        <div className="table-responsive">
+          <table className="table">
             <thead>
               <tr>
                 <th>Konum Adı</th>
@@ -20,7 +20,7 @@ export const ChangesAccept = () => {
                 <td>Bölge2</td>
                 <td>
                   <button
-                    class="btn btn-primary btn-sm"
+                    className="btn btn-primary btn-sm"
                     type="button"
                     style={{borderRadius : "10px"}}
                   >
@@ -29,14 +29,14 @@ export const ChangesAccept = () => {
                 </td>
                 <td>
                   <button
-                    class="btn btn-success btn-sm"
+                    className="btn btn-success btn-sm"
                     type="button"
                     style={{borderRadius : "10px", marginRight : "4px"}}
                   >
                     Kabul
                   </button>
                   <button
-                    class="btn btn-danger btn-sm"
+                    className="btn btn-danger btn-sm"
                     type="button"
                     style={{borderRadius : "10px", marginRight : "4px"}}
                   >
@@ -49,7 +49,7 @@ export const ChangesAccept = () => {
                 <td>Bölge31</td>
                 <td>
                   <button
-                    class="btn btn-primary btn-sm"
+                    className="btn btn-primary btn-sm"
                     type="button"
                     style={{borderRadius : "10px"}}
                   >
@@ -58,14 +58,14 @@ export const ChangesAccept = () => {
                 </td>
                 <td>
                   <button
-                    class="btn btn-success btn-sm"
+                    className="btn btn-success btn-sm"
                     type="button"
                     style={{borderRadius : "10px", marginRight : "4px"}}
                   >
                     Kabul
                   </button>
                   <button
-                    class="btn btn-danger btn-sm"
+                    className="btn btn-danger btn-sm"
                     type="button"
                     style={{borderRadius : "10px", marginRight : "4px"}}
                   >
@@ -78,7 +78,7 @@ export const ChangesAccept = () => {
                 <td>Bölge21</td>
                 <td>
                   <button
-                    class="btn btn-primary btn-sm"
+                    className="btn btn-primary btn-sm"
                     type="button"
                     style={{borderRadius : "10px"}}
                   >
@@ -87,14 +87,14 @@ export const ChangesAccept = () => {
                 </td>
                 <td>
                   <button
-                    class="btn btn-success btn-sm"
+                    className="btn btn-success btn-sm"
                     type="button"
                     style={{borderRadius : "10px", marginRight : "4px"}}
                   >
                     Kabul
                   </button>
                   <button
-                    class="btn btn-danger btn-sm"
+                    className="btn btn-danger btn-sm"
                     type="button"
                     style={{borderRadius : "10px", marginRight : "4px"}}
                   >

@@ -2,10 +2,10 @@ import React from "react";
 
 export const ProfessionalChange = () => {
   return (
-    <section class="py-4 py-md-5 my-5">
-      <div class="container py-md-5">
-        <div class="table-responsive">
-          <table class="table">
+    <section className="py-4 py-md-5 my-5">
+      <div className="container py-md-5">
+        <div className="table-responsive">
+          <table className="table">
             <thead>
               <tr>
                 <th>Uzman Adı</th>
@@ -19,7 +19,7 @@ export const ProfessionalChange = () => {
                 <td>Cell 2</td>
                 <td>
                   <button
-                    class="btn btn-danger"
+                    className="btn btn-danger"
                     type="button"
                     style = {{borderRadius : "34px"}}
                   >
