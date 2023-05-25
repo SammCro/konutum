@@ -8,6 +8,7 @@ import { ForgottenPassword } from "./MainPages/ForgottenPassword";
 import { Signup } from "./MainPages/Signup";
 import { NotFoundPage } from "./MainPages/NotFoundPage";
 import { UserMap } from "./UserPages/UserMap";
+import { LocationDetect } from "./ProfessionalPages/LocationDetect"
 
 const Paths = () => {
   return (
@@ -23,6 +24,7 @@ const Paths = () => {
       <Route path="/signup" element={<Signup></Signup>} />
       <Route path="*" element={<NotFoundPage></NotFoundPage>} />
       <Route path="/usermap" element={<UserMap></UserMap>}></Route>
+      <Route path="/professionalMap" element={<LocationDetect></LocationDetect>}></Route>
     </Routes>
   );
 };
