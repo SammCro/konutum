@@ -50,7 +50,7 @@ export const Signup = () => {
               </div>
               <p class="text-muted">
                 Zaten bir hesabın var mı ?&nbsp;&nbsp;
-                <a href="login.html">
+                <a href="/login">
                   Giriş yap
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -41,7 +41,7 @@ export const Login = () => {
                 </button>
               </div>
               <p class="text-muted">
-                <a href="forgotten-password.html">Şifrenizi mi unuttunuz?</a>
+                <a href="/forgottenpassword">Şifrenizi mi unuttunuz?</a>
               </p>
             </form>
           </div>
