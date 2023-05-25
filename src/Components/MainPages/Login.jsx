@@ -33,6 +33,7 @@ export const Login = () => {
                   type="password"
                   name="password"
                   placeholder="Şifre"
+                  
                 />
               </div>
               <div class="mb-5">
