@@ -2,6 +2,16 @@ import React from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 
+const createPopUp = (houseName, locationName, status) => {
+  return (
+    <Popup>
+      <p className="fw-bolder">House Name : </p> <p>{houseName}</p> 
+      <p className="fw-bolder">Location Name : </p> <p>{locationName}</p>{" "}
+      <p className="fw-bolder">Status : </p> <p>{status}</p>
+    </Popup>
+  );
+};
+
 export const Map = () => {
   return (
     <>
@@ -16,9 +26,7 @@ export const Map = () => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         <Marker position={[39.57, 32.53]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
+          {createPopUp("Sincan", "Ankara", 12)}
         </Marker>
       </MapContainer>
     </>
