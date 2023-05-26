@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export const Signup = () => {
   return (
@@ -50,7 +51,7 @@ export const Signup = () => {
               </div>
               <p className="text-muted">
                 Zaten bir hesabın var mı ?&nbsp;&nbsp;
-                <a href="/login">
+                <NavLink to="/login">
                   Giriş yap
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +70,7 @@ export const Signup = () => {
                     <line x1="15" y1="16" x2="19" y2="12"></line>
                     <line x1="15" y1="8" x2="19" y2="12"></line>
                   </svg>
-                </a>
+                </NavLink>
                 &nbsp;
               </p>
             </form>

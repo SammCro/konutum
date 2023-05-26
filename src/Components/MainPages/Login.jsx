@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export const Login = () => {
   return (
@@ -41,7 +42,7 @@ export const Login = () => {
                 </button>
               </div>
               <p className="text-muted">
-                <a href="/forgottenpassword">Şifrenizi mi unuttunuz?</a>
+                <NavLink to="/forgottenpassword">Şifrenizi mi unuttunuz?</NavLink>
               </p>
             </form>
           </div>

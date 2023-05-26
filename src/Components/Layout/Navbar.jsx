@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -7,9 +8,9 @@ export const Navbar = () => {
       id="mainNav"
     >
       <div className="container">
-        <a className="navbar-brand d-flex align-items-center" href="/">
+        <NavLink className="navbar-brand d-flex align-items-center" to="/">
           <span>Konutum</span>
-        </a>
+        </NavLink>
         <button
           data-bs-toggle="collapse"
           className="navbar-toggler"
@@ -21,30 +22,30 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse" id="navcol-1">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <NavLink className="nav-link" to="/">
                 Ana Sayfa
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item"></li>
             <li className="nav-item"></li>
             <li className="nav-item">
-              <a className="nav-link" href="/about">
+              <NavLink className="nav-link" to="/about">
                 Hakkımızda
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/contacts">
+              <NavLink className="nav-link" to="/contacts">
                 İletişim
-              </a>
+              </NavLink>
             </li>
           </ul>
-          <a
+          <NavLink
             className="btn btn-primary shadow"
             role="button"
-            href="/signup"
+            to="/signup"
           >
             Giriş Yap / Kayıt Ol
-          </a>
+          </NavLink>
         </div>
       </div>
     </nav>

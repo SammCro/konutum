@@ -17,7 +17,7 @@ export const Footer = () => {
             <h3 className="fs-6 fw-bold">Hizmetler</h3>
             <ul className="list-unstyled">
               <li>
-                <a href="#">Arazi Takip Sistemi</a>
+                <a href="/">Arazi Takip Sistemi</a>
               </li>
             </ul>
           </div>
@@ -25,13 +25,13 @@ export const Footer = () => {
             <h3 className="fs-6 fw-bold">Hakkımızda</h3>
             <ul className="list-unstyled">
               <li>
-                <a href="#">Şirket</a>
+                <a href="/">Şirket</a>
               </li>
               <li>
-                <a href="#">Ekip</a>
+                <a href="/">Ekip</a>
               </li>
               <li>
-                <a href="#">Kullanım Koşulları</a>
+                <a href="/">Kullanım Koşulları</a>
               </li>
             </ul>
           </div>
@@ -39,7 +39,7 @@ export const Footer = () => {
             <h3 className="fs-6 fw-bold">Kariyer</h3>
             <ul className="list-unstyled">
               <li>
-                <a href="#">Açık Pozisyonlar</a>
+                <a href="/">Açık Pozisyonlar</a>
               </li>
               <li></li>
             </ul>
