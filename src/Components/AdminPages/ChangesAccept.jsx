@@ -10,6 +10,7 @@ export const ChangesAccept = () => {
               <tr>
                 <th>Konum Adı</th>
                 <th>Lokasyon</th>
+                <th>Uzman</th>
                 <th>Uzman Yorumu</th>
                 <th>Kabul / Red</th>
               </tr>
@@ -18,6 +19,7 @@ export const ChangesAccept = () => {
               <tr>
                 <td>Seyhanlar</td>
                 <td>Bölge2</td>
+                <td>Uzman1</td>
                 <td>
                   <button
                     className="btn btn-primary btn-sm"
@@ -47,6 +49,7 @@ export const ChangesAccept = () => {
               <tr>
                 <td>Sincan</td>
                 <td>Bölge31</td>
+                <td>Uzman2</td>
                 <td>
                   <button
                     className="btn btn-primary btn-sm"
@@ -76,6 +79,7 @@ export const ChangesAccept = () => {
               <tr>
                 <td>Culuk</td>
                 <td>Bölge21</td>
+                <td>Uzman3</td>
                 <td>
                   <button
                     className="btn btn-primary btn-sm"
