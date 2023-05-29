@@ -10,9 +10,8 @@ export const AddLocation = () => {
             <div
               style={{
                 maxWidth: "380px",
-                border: "2px solid",
-                padding: "10px",
               }}
+              className="shadow-lg p-3 mb-5 bg-white rounded"
             >
               <form style={{ textAlign: "center", maxWidth: "360px" }}>
                 <p className="fs-3">Konum Ekle</p>
@@ -32,7 +31,7 @@ export const AddLocation = () => {
                   <input
                     class="form-control w-100 mb-3"
                     type="text"
-                    placeholder="Enlem, Boylam"
+                    placeholder="Enlem,Boylam"
                   />
                 </div>
                 <input class="btn btn-primary" type="submit" value={"Kaydet"} />
