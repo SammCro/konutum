@@ -2,17 +2,41 @@ import React from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 
-const createPopUp = (houseName, locationName, status) => {
+const createMarker = (
+  houseName,
+  locationName,
+  status,
+  userType,
+  latitude,
+  longitude,
+  setSelectedHouse
+) => {
   return (
-    <Popup>
-      <p className="fw-bolder">House Name : </p> <p>{houseName}</p> 
-      <p className="fw-bolder">Location Name : </p> <p>{locationName}</p>{" "}
-      <p className="fw-bolder">Status : </p> <p>{status}</p>
-    </Popup>
+    <Marker position={[latitude, longitude]}>
+      <Popup>
+        <p className="fw-bolder">House Name : </p> <p>{houseName}</p>
+        <p className="fw-bolder">Location Name : </p> <p>{locationName}</p>{" "}
+        <p className="fw-bolder">Status : </p> <p>{status}</p>
+        {userType === "Admin" && (
+          <button className="btn btn-danger btn-sm">Sil</button>
+        )}
+        {userType === "User" && (
+          <button className="btn btn-success btn-sm">Ekle</button>
+        )}
+        {userType === "Expert" && (
+          <button
+            className="btn btn-primary btn-sm"
+            onClick= { () => setSelectedHouse(houseName)}
+          >
+            Yorum Ekle
+          </button>
+        )}
+      </Popup>
+    </Marker>
   );
 };
 
-export const Map = () => {
+export const Map = ({ userType, setSelectedHouse }) => {
   return (
     <>
       <MapContainer
@@ -25,9 +49,10 @@ export const Map = () => {
           url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        <Marker position={[39.57, 32.53]}>
-          {createPopUp("Sincan", "Ankara", 12)}
-        </Marker>
+        {(userType === "Admin" || userType === "User") &&
+          createMarker("House Name", "Location Name", "Status", userType, 32, 45)}
+        {userType === "Expert" &&
+          createMarker("Sincan", "Haymana", "12", userType, 37, 34, setSelectedHouse)}
       </MapContainer>
     </>
   );

@@ -28,7 +28,7 @@ const Paths = () => {
       <Route path="/signup" element={<Signup></Signup>} />
       <Route path="*" element={<NotFoundPage></NotFoundPage>} />
       {/* Users processes*/}
-      <Route path="/usermap" element={<UserMap></UserMap>}></Route>
+      <Route path="/userMap" element={<UserMap></UserMap>}></Route>
       <Route
         path="/userFilterLocation"
         element={<FilterLocation></FilterLocation>}

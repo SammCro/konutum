@@ -2,6 +2,7 @@ import React from "react";
 import { Map } from "../SubComponents/Map";
 
 export const AddLocation = () => {
+  const userType = "Admin"
   return (
     <section className="py-5 mt-5">
       <div className="container py-4 py-xl-5">
@@ -40,7 +41,7 @@ export const AddLocation = () => {
           </div>
           <div className="col-md-9">
             <div>
-              <Map></Map>
+              <Map userType={userType}></Map>
             </div>
           </div>
         </div>
