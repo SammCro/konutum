@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 
 const createMarker = (
+  houseId,
   houseName,
   locationName,
   status,
   userType,
-  latitude,
-  longitude,
+  coordinates,
   setSelectedHouse
 ) => {
+  const c = coordinates.split(",");
+  const lat = c[0];
+  const lng = c[1];
   return (
-    <Marker position={[latitude, longitude]}>
+    <Marker position={[lat,lng]} key={houseId}>
       <Popup>
         <p className="fw-bolder">House Name : </p> <p>{houseName}</p>
         <p className="fw-bolder">Location Name : </p> <p>{locationName}</p>{" "}
@@ -37,6 +40,16 @@ const createMarker = (
 };
 
 export const Map = ({ userType, setSelectedHouse }) => {
+  const [houses, setHouses] = useState([]);
+  useEffect( () => {
+    const fetchHouses = async ()  => {
+      const response = await fetch("http://localhost:8090/house/getAllHouses");
+      const data = await response.json();
+      setHouses(data);
+    }
+    fetchHouses().catch(err => console.log(err));
+  }, [houses])
+
   return (
     <>
       <MapContainer
@@ -50,9 +63,30 @@ export const Map = ({ userType, setSelectedHouse }) => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         {(userType === "Admin" || userType === "User") &&
-          createMarker("House Name", "Location Name", "Status", userType, 32, 45)}
+          houses.map((house) =>
+            createMarker(
+              house.id,
+              house.houseName,
+              house.locationName,
+              house.confidenceLevel,
+              userType,
+              house.coordinates
+            )
+          )
+          }
         {userType === "Expert" &&
-          createMarker("Sincan", "Haymana", "12", userType, 37, 34, setSelectedHouse)}
+          houses.map((house) =>
+            createMarker(
+              house.id,
+              house.houseName,
+              house.locationName,
+              house.confidenceLevel,
+              userType,
+              house.coordinates,
+              setSelectedHouse
+            )
+          )
+        }
       </MapContainer>
     </>
   );

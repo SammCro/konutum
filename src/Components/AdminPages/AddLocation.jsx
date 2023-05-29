@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Map } from "../SubComponents/Map";
 
 export const AddLocation = () => {
-  const userType = "Admin"
+  const userType = "Admin";
+  const [houseName, setHouseName] = useState([]);
+  const [locationName, setLocationName] = useState([]);
+  const [coordinates, setCoordinates] = useState([]);
+
+  async function submitLocation(e) {
+    e.preventDefault()
+    const body = {
+      houseName: houseName,
+      locationName: locationName,
+      coordinates: coordinates,
+    };
+    const response = await fetch("http://localhost:8090/house/addHouse", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    setHouseName('')
+    setLocationName('')
+    setCoordinates('')
+    const data = await response.json();
+    console.log(data);
+  }
+
   return (
     <section className="py-5 mt-5">
       <div className="container py-4 py-xl-5">
@@ -14,34 +37,50 @@ export const AddLocation = () => {
               }}
               className="shadow-lg p-3 mb-5 bg-white rounded"
             >
-              <form style={{ textAlign: "center", maxWidth: "360px" }}>
+              <form style={{ textAlign: "center", maxWidth: "360px" }} onSubmit={submitLocation}>
                 <p className="fs-3">Konum Ekle</p>
                 <input
-                  class="form-control"
+                  className="form-control"
                   type="text"
                   style={{ marginBottom: "12px" }}
                   placeholder="Konut İsmi"
+                  onChange={(e) => {
+                    setHouseName(e.target.value);
+                  }}
+                  value={houseName}
                 />
                 <input
-                  class="form-control"
+                  className="form-control"
                   type="text"
                   style={{ marginBottom: "12px" }}
                   placeholder="Lokasyon İsmi"
+                  onChange={(e) => {
+                    setLocationName(e.target.value);
+                  }}
+                  value={locationName}
                 />
-                <div class="input-group" style={{ marginBottom: "12px" }}>
+                <div className="input-group" style={{ marginBottom: "12px" }}>
                   <input
-                    class="form-control w-100 mb-3"
+                    className="form-control w-100 mb-3"
                     type="text"
                     placeholder="Enlem,Boylam"
+                    onChange={(e) => {
+                      setCoordinates(e.target.value);
+                    }}
+                    value={coordinates}
                   />
                 </div>
-                <input class="btn btn-primary" type="submit" value={"Kaydet"} />
+                <input
+                  className="btn btn-primary"
+                  type="submit"
+                  value={"Kaydet"}
+                />
               </form>
             </div>
           </div>
           <div className="col-md-9">
             <div>
-              <Map userType={userType}></Map>
+              <Map userType={userType} ></Map>
             </div>
           </div>
         </div>
