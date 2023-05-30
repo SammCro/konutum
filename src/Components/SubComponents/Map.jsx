@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 
+
 const createMarker = (
   houseId,
   houseName,
@@ -21,7 +22,7 @@ const createMarker = (
         <p className="fw-bolder">Location Name : </p> <p>{locationName}</p>{" "}
         <p className="fw-bolder">Status : </p> <p>{status}</p>
         {userType === "Admin" && (
-          <button className="btn btn-danger btn-sm">Sil</button>
+          <button className="btn btn-danger btn-sm" onClick={() => {deleteHouse(houseId)}}>Sil</button>
         )}
         {userType === "User" && (
           <button className="btn btn-success btn-sm">Ekle</button>
@@ -29,7 +30,7 @@ const createMarker = (
         {userType === "Expert" && (
           <button
             className="btn btn-primary btn-sm"
-            onClick= { () => setSelectedHouse(houseName)}
+            onClick= { () => setSelectedHouse([houseId, houseName, locationName])}
           >
             Yorum Ekle
           </button>
@@ -38,6 +39,15 @@ const createMarker = (
     </Marker>
   );
 };
+
+async function deleteHouse(id){
+  const response = await fetch("http://localhost:8090/house/deleteHouse/" + id, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+  });
+  const data = await response.json();
+  console.log(data);
+}
 
 export const Map = ({ userType, setSelectedHouse }) => {
   const [houses, setHouses] = useState([]);
