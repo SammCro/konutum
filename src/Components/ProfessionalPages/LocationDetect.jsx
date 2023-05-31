@@ -11,15 +11,16 @@ export const LocationDetect = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        houseName: selectedHouse.houseName,
-        locationName : selectedHouse.locationName,
-        expert: "Samet",
+        houseName: selectedHouse[1],
+        locationName : selectedHouse[2],
+        expertName: "Cagla",
         status: "pending",
         comment: comment
       })
     });
-    const data = await response.json();
-    console.log(data);
+
+    setComment("")
+    setSelectedHouse([])
   }
   return (
     <section className="py-5 mt-5">
@@ -28,7 +29,7 @@ export const LocationDetect = () => {
           <div className="col-md-3 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
             <div style={{ maxWidth: "350px" }}>
               <form style={{ textAlign: "center"}} onSubmit={submitComment}>
-                <label>{selectedHouse}</label>
+                <label>{selectedHouse[1]}</label>
                 <textarea
                   className="form-control"
                   style={{ height: "340.1875px" }}

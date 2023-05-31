@@ -25,7 +25,7 @@ const createMarker = (
           <button className="btn btn-danger btn-sm" onClick={() => {deleteHouse(houseId)}}>Sil</button>
         )}
         {userType === "User" && (
-          <button className="btn btn-success btn-sm">Ekle</button>
+          <button className="btn btn-success btn-sm" onClick={ () => {addToFavoriteHouses(1,houseId)}}>Ekle</button>
         )}
         {userType === "Expert" && (
           <button
@@ -39,6 +39,15 @@ const createMarker = (
     </Marker>
   );
 };
+
+async function addToFavoriteHouses(userId, houseId){
+  const response = await fetch("http://localhost:8090/user/addFavoriteHouse/" + userId + "/" + houseId, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+  });
+  const data = await response.json();
+  console.log(data);
+}
 
 async function deleteHouse(id){
   const response = await fetch("http://localhost:8090/house/deleteHouse/" + id, {

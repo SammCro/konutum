@@ -1,6 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const FilterLocation = () => {
+  const [favoriteHouses, setFavoriteHouses] = useState([]);
+
+  useEffect(() => {
+    getUserFavorites(1).catch((error) => {
+      console.log("error when trying to get favorite houses.");
+    });
+  }, [favoriteHouses]);
+
+  async function getUserFavorites(userId) {
+    const response = await fetch(
+      "http://localhost:8090/user/getUserFavorites/" + userId
+    );
+    const data = await response.json();
+    setFavoriteHouses(data);
+  }
+
+  async function generateReport(houseName) {
+    await fetch(
+      "http://localhost:8090/commentRequest/generateReport/" + houseName
+    );
+  }
+
+  function getGenerateReportButton(houseName) {
+    return (
+      <button
+        onClick={ () => {generateReport(houseName)}}
+        className="btn btn-primary btn-sm"
+      >
+        Rapor Oluştur
+      </button>
+    );
+  }
+
   return (
     <section className="py-4 py-md-5 my-5">
       <div className="container py-md-5">
@@ -15,36 +48,14 @@ export const FilterLocation = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Seyhanlar</td>
-                <td>Bölge1</td>
-                <td>RaporSeyhan.pdf</td>
-                <td>%82</td>
-              </tr>
-              <tr>
-                <td>Sincan</td>
-                <td>Bölge3</td>
-                <td>Sincan.pdf</td>
-                <td>%98</td>
-              </tr>
-              <tr>
-                <td>Konak</td>
-                <td>Bölge41</td>
-                <td>Konak.pdf</td>
-                <td>%53</td>
-              </tr>
-              <tr>
-                <td>Culuk</td>
-                <td>Bölge12</td>
-                <td>Culuk.pdf</td>
-                <td>%12</td>
-              </tr>
-              <tr>
-                <td>Hacıbektaş</td>
-                <td>Bölge23</td>
-                <td>Hacıbektas.pdf</td>
-                <td>%76</td>
-              </tr>
+              {favoriteHouses.map((house) => (
+                <tr key={house.houseId}>
+                  <td>{house.houseName}</td>
+                  <td>{house.locationName}</td>
+                  <td>{getGenerateReportButton(house.houseName)}</td>
+                  <td>{house.confidenceLevel}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

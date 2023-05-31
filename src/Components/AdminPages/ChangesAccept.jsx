@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const ChangesAccept = () => {
+  const[pendingCommentRequests, setPendingCommentRequests] = useState([]);
+  useEffect(() => {
+    const fetchPendingCommentRequests = () =>{
+      fetch("http://localhost:8090/commentRequest/getPendingCommentRequests")
+      .then((response) => response.json())
+      .then((data) => setPendingCommentRequests(data))
+      .catch((error) => {console.log(error)})
+    }
+    fetchPendingCommentRequests();
+  }, [pendingCommentRequests]) 
+
+  async function acceptCommentRequest(commentRequestId){
+    await fetch("http://localhost:8090/commentRequest/acceptCommentRequest/" + commentRequestId)
+  }
+
+  async function rejectCommentRequest(commentRequestId){
+    await fetch("http://localhost:8090/commentRequest/rejectCommentRequest/" + commentRequestId)
+  }
+
   return (
     <section className="py-4 py-md-5 my-5">
       <div className="container py-md-5">
@@ -16,96 +35,32 @@ export const ChangesAccept = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Seyhanlar</td>
-                <td>Bölge2</td>
-                <td>Uzman1</td>
-                <td>
-                  <button
-                    className="btn btn-primary btn-sm"
-                    type="button"
-                    style={{borderRadius : "10px"}}
-                  >
-                    Göster
-                  </button>
-                </td>
-                <td>
-                  <button
-                    className="btn btn-success btn-sm"
-                    type="button"
-                    style={{borderRadius : "10px", marginRight : "4px"}}
-                  >
-                    Kabul
-                  </button>
-                  <button
-                    className="btn btn-danger btn-sm"
-                    type="button"
-                    style={{borderRadius : "10px", marginRight : "4px"}}
-                  >
-                    Red
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Sincan</td>
-                <td>Bölge31</td>
-                <td>Uzman2</td>
-                <td>
-                  <button
-                    className="btn btn-primary btn-sm"
-                    type="button"
-                    style={{borderRadius : "10px"}}
-                  >
-                    Göster
-                  </button>
-                </td>
-                <td>
-                  <button
-                    className="btn btn-success btn-sm"
-                    type="button"
-                    style={{borderRadius : "10px", marginRight : "4px"}}
-                  >
-                    Kabul
-                  </button>
-                  <button
-                    className="btn btn-danger btn-sm"
-                    type="button"
-                    style={{borderRadius : "10px", marginRight : "4px"}}
-                  >
-                    Red
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Culuk</td>
-                <td>Bölge21</td>
-                <td>Uzman3</td>
-                <td>
-                  <button
-                    className="btn btn-primary btn-sm"
-                    type="button"
-                    style={{borderRadius : "10px"}}
-                  >
-                    Göster
-                  </button>
-                </td>
-                <td>
-                  <button
-                    className="btn btn-success btn-sm"
-                    type="button"
-                    style={{borderRadius : "10px", marginRight : "4px"}}
-                  >
-                    Kabul
-                  </button>
-                  <button
-                    className="btn btn-danger btn-sm"
-                    type="button"
-                    style={{borderRadius : "10px", marginRight : "4px"}}
-                  >
-                    Red
-                  </button>
-                </td>
-              </tr>
+              {pendingCommentRequests.map((commentRequest) => (
+                <tr key={commentRequest.id}>
+                  <td>{commentRequest.houseName}</td>
+                  <td>{commentRequest.locationName}</td>
+                  <td>{commentRequest.expertName}</td>
+                  <td>{commentRequest.expertComment}</td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        acceptCommentRequest(commentRequest.id);
+                      }}
+                      className="btn btn-success btn-sm"
+                    >
+                      Kabul
+                    </button>
+                    <button
+                      onClick={() => {
+                        rejectCommentRequest(commentRequest.id);
+                      }}
+                      className="btn btn-danger btn-sm"
+                    >
+                      Red
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

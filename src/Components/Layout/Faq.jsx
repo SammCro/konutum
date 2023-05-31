@@ -40,7 +40,7 @@ export const Faq = () => {
                     <p>
                       Konutum uygulamasında ki tüm arazi bilgileri, risk
                       tespitleri alanında uzman kişiler tarafından
-                      onaylanmaktadır..
+                      onaylanmaktadır.
                     </p>
                   </div>
                 </div>
@@ -65,9 +65,8 @@ export const Faq = () => {
                 >
                   <div className="accordion-body">
                     <p className="mb-0">
-                      Nullam id dolor id nibh ultricies vehicula ut id elit.
-                      Cras justo odio, dapibus ac facilisis in, egestas eget
-                      quam. Donec id elit non mi porta gravida at eget metus.
+                      Uzman kişiler sistemdeki Yöneticiler tarafından doğruluğu ve güvenilirliği onaylanmış,
+                      alanında uzman kişilerdir.
                     </p>
                   </div>
                 </div>
@@ -92,9 +91,9 @@ export const Faq = () => {
                 >
                   <div className="accordion-body">
                     <p className="mb-0">
-                      Nullam id dolor id nibh ultricies vehicula ut id elit.
-                      Cras justo odio, dapibus ac facilisis in, egestas eget
-                      quam. Donec id elit non mi porta gravida at eget metus.
+                      Evet, kendi komut listenizi oluşturabilirsiniz. Bunun için 
+                      sistemde ki haritada eklemek istediğiniz konumları seçip, bu konumların
+                      raporlarına favorilerim kısmından ulaşabileceksiniz.
                     </p>
                   </div>
                 </div>
