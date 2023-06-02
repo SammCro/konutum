@@ -1,23 +1,34 @@
 import React, { useEffect, useState } from "react";
 
 export const ChangesAccept = () => {
-  const[pendingCommentRequests, setPendingCommentRequests] = useState([]);
-  useEffect(() => {
-    const fetchPendingCommentRequests = () =>{
-      fetch("http://localhost:8090/commentRequest/getPendingCommentRequests")
-      .then((response) => response.json())
-      .then((data) => setPendingCommentRequests(data))
-      .catch((error) => {console.log(error)})
-    }
-    fetchPendingCommentRequests();
-  }, [pendingCommentRequests]) 
+  const [pendingCommentRequests, setPendingCommentRequests] = useState([]);
+  const [expertName, setExpertName] = useState([]);
+  const [comment, setComment] = useState([]);
 
-  async function acceptCommentRequest(commentRequestId){
-    await fetch("http://localhost:8090/commentRequest/acceptCommentRequest/" + commentRequestId)
+  useEffect(() => {
+    const fetchPendingCommentRequests = () => {
+      fetch("http://localhost:8090/commentRequest/getPendingCommentRequests")
+        .then((response) => response.json())
+        .then((data) => setPendingCommentRequests(data))
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchPendingCommentRequests();
+  }, [pendingCommentRequests]);
+
+  async function acceptCommentRequest(commentRequestId) {
+    await fetch(
+      "http://localhost:8090/commentRequest/acceptCommentRequest/" +
+        commentRequestId
+    );
   }
 
-  async function rejectCommentRequest(commentRequestId){
-    await fetch("http://localhost:8090/commentRequest/rejectCommentRequest/" + commentRequestId)
+  async function rejectCommentRequest(commentRequestId) {
+    await fetch(
+      "http://localhost:8090/commentRequest/rejectCommentRequest/" +
+        commentRequestId
+    );
   }
 
   return (
@@ -40,7 +51,18 @@ export const ChangesAccept = () => {
                   <td>{commentRequest.houseName}</td>
                   <td>{commentRequest.locationName}</td>
                   <td>{commentRequest.expertName}</td>
-                  <td>{commentRequest.expertComment}</td>
+                  <td>
+                    <button
+                      className="btn btn-primary btn-sm"
+                      type="button"
+                      onClick={() => {
+                        setExpertName(commentRequest.expertName);
+                        setComment(commentRequest.comment);
+                      }}
+                    >
+                      Göster
+                    </button>
+                  </td>
                   <td>
                     <button
                       onClick={() => {

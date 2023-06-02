@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+async function submitLogin(email, password) {
+  const response = await fetch("http://localhost:8090/user/getUserType", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+  });
+  // setUserType
+  
+}
+
 export const Login = () => {
+  const[email, setEmail] = useState([]);
+  const[password, setPassword] = useState([]); 
+
+  const[userType, setUserType ] = useState([]);
+  
   return (
     <section className="py-4 py-md-5 my-5">
       <div className="container py-md-5">
@@ -26,6 +41,8 @@ export const Login = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
+                  onChange={(e) => {setEmail(e.target.value)}}
+                  value={email}
                 />
               </div>
               <div className="mb-3">
@@ -34,6 +51,8 @@ export const Login = () => {
                   type="password"
                   name="password"
                   placeholder="Şifre"
+                  onChange={(e) => {setPassword(e.target.value)}}
+                  value={password}
                 />
               </div>
               <div className="mb-5">

@@ -18,9 +18,24 @@ export const FilterLocation = () => {
   }
 
   async function generateReport(houseName) {
-    await fetch(
+    const response = await fetch(
       "http://localhost:8090/commentRequest/generateReport/" + houseName
     );
+    
+    if (response.ok) {
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = houseName + ".pdf";
+      link.click();
+      
+      // Clean up the URL object
+      URL.revokeObjectURL(url);
+    } else {
+      console.error("Error generating the report.");
+    }
   }
 
   function getGenerateReportButton(houseName) {
@@ -29,7 +44,7 @@ export const FilterLocation = () => {
         onClick={ () => {generateReport(houseName)}}
         className="btn btn-primary btn-sm"
       >
-        Rapor Oluştur
+        Rapor Göster
       </button>
     );
   }
