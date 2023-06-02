@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { Footer } from "../Layout/Footer";
+import { Navbar } from "../Layout/Navbar";
 
 async function submitLogin(email, password) {
   const response = await fetch("http://localhost:8090/user/getUserType", {
@@ -18,6 +20,8 @@ export const Login = () => {
   const[userType, setUserType ] = useState([]);
   
   return (
+    <>
+    <Navbar></Navbar>
     <section className="py-4 py-md-5 my-5">
       <div className="container py-md-5">
         <div className="row">
@@ -68,5 +72,7 @@ export const Login = () => {
         </div>
       </div>
     </section>
+    <Footer></Footer>
+    </>
   );
 };

@@ -1,7 +1,11 @@
 import React from "react";
+import { Navbar } from "../Layout/Navbar";
+import { Footer } from "../Layout/Footer";
 
 export const About = () => {
   return (
+    <>
+    <Navbar></Navbar>
     <section className="py-5 mt-5">
       <div className="container py-4 py-xl-5">
         <div className="row mb-4 mb-lg-5">
@@ -319,5 +323,7 @@ export const About = () => {
         </div>
       </div>
     </section>
+    <Footer></Footer>
+    </>
   );
 };

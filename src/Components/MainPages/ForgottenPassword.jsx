@@ -1,7 +1,11 @@
 import React from "react";
+import { Navbar } from "../Layout/Navbar";
+import { Footer } from "../Layout/Footer";
 
 export const ForgottenPassword = () => {
   return (
+    <>
+    <Navbar></Navbar>
     <section className="py-4 py-md-5 mt-5">
       <div className="container py-md-5">
         <div className="row d-flex align-items-center">
@@ -39,5 +43,7 @@ export const ForgottenPassword = () => {
         </div>
       </div>
     </section>
+    <Footer></Footer>
+    </>
   );
 };

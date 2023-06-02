@@ -1,9 +1,13 @@
 import React from "react";
 import { Faq } from "../Layout/Faq"
+import { Navbar } from "../Layout/Navbar";
+import { Footer } from "../Layout/Footer";
 
 export const Contacts = () => {
   return (
-    <section className="py-5 mt-5">
+    <>
+    <Navbar></Navbar>
+        <section className="py-5 mt-5">
       <div className="container py-5">
         <div className="row">
           <div className="col-md-8 col-xl-6 text-center mx-auto">
@@ -62,5 +66,7 @@ export const Contacts = () => {
       </div>
       <Faq></Faq>
     </section>
+    <Footer></Footer>
+    </>
   );
 };

@@ -11,7 +11,6 @@ import { UserMap } from "./UserPages/UserMap";
 import { LocationDetect } from "./ProfessionalPages/LocationDetect";
 import { FilterLocation } from "./UserPages/FilterLocation";
 import { ChangesAccept } from "./AdminPages/ChangesAccept";
-import { ProfessionalChange } from "./AdminPages/ProfessionalControl";
 import { AddLocation } from "./AdminPages/AddLocation";
 
 const Paths = () => {
@@ -40,10 +39,6 @@ const Paths = () => {
       <Route
         path="/changesAccept"
         element={<ChangesAccept></ChangesAccept>}
-      ></Route>
-      <Route
-        path="/professionalControl"
-        element={<ProfessionalChange></ProfessionalChange>}
       ></Route>
       <Route path="/addLocation" element={<AddLocation></AddLocation>}></Route>
     </Routes>

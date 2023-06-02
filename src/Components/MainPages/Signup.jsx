@@ -1,8 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Navbar } from "../Layout/Navbar";
+import { Footer } from "../Layout/Footer";
 
 export const Signup = () => {
   return (
+    <>
+    <Navbar></Navbar>
     <section className="py-4 py-md-5 my-5">
       <div className="container py-md-5">
         <div className="row">
@@ -78,5 +82,7 @@ export const Signup = () => {
         </div>
       </div>
     </section>
+    <Footer></Footer>
+    </>
   );
 };

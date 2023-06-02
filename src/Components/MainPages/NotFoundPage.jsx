@@ -1,7 +1,11 @@
 import React from "react";
+import { Navbar } from "../Layout/Navbar";
+import { Footer } from "../Layout/Footer";
 
 export const NotFoundPage = () => {
   return (
+    <>
+    <Navbar></Navbar>
     <section className="py-5 mt-5">
       <div className="container">
         <div className="row row-cols-1 d-flex justify-content-center align-items-center">
@@ -21,5 +25,7 @@ export const NotFoundPage = () => {
         </div>
       </div>
     </section>
+    <Footer></Footer>
+    </>
   );
 };
