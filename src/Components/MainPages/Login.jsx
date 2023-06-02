@@ -1,23 +1,35 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, redirect} from "react-router-dom";
 import { Footer } from "../Layout/Footer";
 import { Navbar } from "../Layout/Navbar";
 
-async function submitLogin(email, password) {
-  const response = await fetch("http://localhost:8090/user/getUserType", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
-  });
-  // setUserType
-  
-}
+
 
 export const Login = () => {
-  const[email, setEmail] = useState([]);
-  const[password, setPassword] = useState([]); 
+  const[email, setEmail] = useState("");
+  const[password, setPassword] = useState(""); 
 
-  const[userType, setUserType ] = useState([]);
+  const submitLogin = async (e) => {
+    e.preventDefault();
+    const response = await fetch("http://localhost:8090/user/getUserType/" + email + "/" + password, {
+      method: "POST", 
+      headers: {
+        "Content-Type": "application/json",
+      }
+    });
+    const userType = await response.text();
+
+    if(userType === "Admin"){
+      window.location.href = "/addLocation"
+    }
+    else if(userType === "User"){
+      window.location.href = "/userMap"
+
+    }
+    else if(userType === "Expert"){
+      window.location.href = "/professionalMap"
+    }
+  };
   
   return (
     <>
@@ -38,11 +50,11 @@ export const Login = () => {
                 <strong>Giriş Yap</strong>
               </span>
             </h2>
-            <form method="post">
+            <form onSubmit={submitLogin}>
               <div className="mb-3">
                 <input
                   className="shadow form-control"
-                  type="email"
+                  type="text"
                   name="email"
                   placeholder="Email"
                   onChange={(e) => {setEmail(e.target.value)}}
