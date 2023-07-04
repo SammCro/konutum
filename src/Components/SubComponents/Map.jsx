@@ -18,9 +18,9 @@ const createMarker = (
   return (
     <Marker position={[lat,lng]} key={houseId}>
       <Popup>
-        <p className="fw-bolder">House Name : </p> <p>{houseName}</p>
-        <p className="fw-bolder">Location Name : </p> <p>{locationName}</p>{" "}
-        <p className="fw-bolder">Status : </p> <p>{status}</p>
+        <p className="fw-bolder">Konut : </p> <p>{houseName}</p>
+        <p className="fw-bolder">Lokasyon : </p> <p>{locationName}</p>{" "}
+        <p className="fw-bolder">Durum : </p> <p>{status}</p>
         {userType === "Admin" && (
           <button className="btn btn-danger btn-sm" onClick={() => {deleteHouse(houseId)}}>Sil</button>
         )}

@@ -82,7 +82,7 @@ export const LocationDetect = () => {
                     type="submit"
                     style={{ marginTop: "24px" }}
                   >
-                    Button
+                    Yorum Ekle
                   </button>
                 </form>
               </div>

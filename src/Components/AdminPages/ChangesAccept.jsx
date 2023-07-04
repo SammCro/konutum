@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { Map } from "../SubComponents/Map";
 
 export const ChangesAccept = () => {
   const [pendingCommentRequests, setPendingCommentRequests] = useState([]);
@@ -129,6 +130,9 @@ export const ChangesAccept = () => {
               </tbody>
             </table>
           </div>
+        </div>
+        <div>
+          <Map userType={"Admin"}></Map>
         </div>
       </section>
     </>

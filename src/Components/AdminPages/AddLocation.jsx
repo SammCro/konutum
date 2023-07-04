@@ -87,7 +87,7 @@ export const AddLocation = () => {
                   type="text"
                   style={{ marginBottom: "12px" }}
                   placeholder="Konut İsmi"
-                  onChange={(e) => {
+                  onChange={(e) => { 
                     setHouseName(e.target.value);
                   }}
                   value={houseName}
@@ -106,7 +106,7 @@ export const AddLocation = () => {
                   <input
                     className="form-control w-100 mb-3"
                     type="text"
-                    placeholder="Enlem,Boylam"
+                    placeholder="Koordinatlar"
                     onChange={(e) => {
                       setCoordinates(e.target.value);
                     }}
